@@ -24,7 +24,7 @@ def go(args):
     artifact_local_path = run.use_artifact(args.input_artifact).file()
     df = pd.read_csv(artifact_local_path)
     logger.info("Loaded dataset")
-    print("HELLO?!?!?!")
+
     # Drop outliers
     idx = df['price'].between(args.min_price, args.max_price)
     df = df[idx].copy()
